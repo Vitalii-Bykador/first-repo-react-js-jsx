@@ -1,17 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import Header from "./Header.js";
+import Main from "./Main.js";
+import Aside from "./Aside.js";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const container = document.getElementById("root");
+const root = ReactDOM.createRoot(container);
+
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <div>
+        <Header head="Бегущий город"/>
+        <Main 
+            head="Прибегайте!"
+            text='Начало мероприятия "Бегущий город" в субботу в 10:00 часов на
+            площади Ленина. Маршрут будет представлен перед началом пробега,
+            расстояние около 10 км.'
+        />
+        <Aside 
+            set={{
+                "but1": ["https://donstu.ru/", "мы в дгту"],
+                "but2": ["https://rostselmash.com/", "мы на РСМ"],
+                "but3": ["https://rostov.megafon.ru/", "спонсор"]
+            }}
+        />
+    </div>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
